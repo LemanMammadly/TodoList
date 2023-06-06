@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#message-div{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color:#d4d3c9;
+    border-radius: 10px;
+    margin: 20px;
+    display: none;
+}
+
+.message i{
+    background-color: red;
+    color: #fff;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+
+.remove-all{
+    display: none;
+}
