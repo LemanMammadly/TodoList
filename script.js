@@ -6,8 +6,10 @@ function addList() {
   let textInp = document.getElementById("textInp");
   let ul = document.getElementById("ul");
   let remAll = document.getElementById("rem-All");
-  if (textInp.value) {
+
+  if (textInp.value && !(textArr.includes(textInp.value))) {
     textArr.push(textInp.value);
+    console.log(textArr.filter((x) => x != textInp.value));
     remAll.style.display = "block";
     document.getElementById("all-remove").disabled = false;
     textInp.value = "";
@@ -42,11 +44,12 @@ function Display() {
   for (let i = 0; i < textArr.length; i++) {
     item += `<li class="list-group-item mb-3 d-flex justify-content-between align-items-center">${textArr[i]} <button onclick="Delete('${i}')" class="btn btn-danger mx-2">Delete</button> </li>`;
   }
+
   ul.innerHTML = item;
 }
 
 function RemoveAll() {
-    textArr.splice(0, textArr.length);
-    document.getElementById("all-remove").disabled = true;
-    Display();
+  textArr.splice(0, textArr.length);
+  document.getElementById("all-remove").disabled = true;
+  Display();
 }
